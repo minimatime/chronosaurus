@@ -40,8 +40,21 @@ dependencies {
     implementation("androidx.navigation:navigation-ui:2.7.6")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.room:room-common:2.6.1")
+    implementation("androidx.annotation:annotation-jvm:1.7.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    // Room Database for local storage
+    implementation("androidx.room:room-runtime:2.4.0")
+    annotationProcessor("androidx.room:room-compiler:2.4.0")
+
+    // ViewModel and LiveData
+    implementation("androidx.lifecycle:lifecycle-viewmodel:2.4.0")
+    implementation("androidx.lifecycle:lifecycle-livedata:2.4.0")
+
+    // Firebase Cloud Messaging (FCM)
+    implementation("com.google.firebase:firebase-messaging:24.1.0")
 
 }
