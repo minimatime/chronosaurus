@@ -1,24 +1,113 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <EditText
-        android:id="@+id/newAssignmentText"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:hint="@string/new_assignment"/>
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="50dp"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/newAssignmentButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/newAssignmentText"
-        android:layout_alignParentEnd="true"
-        android:textSize="16sp"
-        android:text="@string/save"
-        android:textAllCaps="false"
-        android:background="@android:color/transparent"
-        android:textColor="@android:color/darker_gray"/>
-</RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:text="@string/add_an_assignment"
+                android:textColor="@color/black"
+                android:textSize="22sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="@string/fill_in_the_blanks_to_add_an_assignment"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:alpha="0.8"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_marginLeft="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Title"/>
+
+            <EditText
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:singleLine="true"
+                android:background="@drawable/btn_border"
+                android:padding="10dp"
+                android:id="@+id/addTitle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="30dp"
+                android:text="Due Date"/>
+
+            <EditText
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:singleLine="true"
+                android:background="@drawable/btn_border"
+                android:padding="10dp"
+                android:id="@+id/addDueDate"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="30dp"
+                android:text="Associated class"/>
+
+            <EditText
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:singleLine="true"
+                android:background="@drawable/btn_border"
+                android:padding="10dp"
+                android:id="@+id/addAssociatedClass"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="30dp"
+                android:text="Details"/>
+
+            <EditText
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:singleLine="true"
+                android:background="@drawable/btn_border"
+                android:padding="10dp"
+                android:id="@+id/addDetails"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/addAssignment"
+                android:text="Add Assignment"
+                android:background="@drawable/btn_background"
+                android:textColor="@color/design_default_color_on_primary"
+                android:layout_marginTop="40dp"/>
+
+    </LinearLayout>
+</ScrollView>

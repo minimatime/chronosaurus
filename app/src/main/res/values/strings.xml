@@ -14,6 +14,8 @@
     <string name="assignments">Assignments</string>
     <string name="new_assignment">New Assignment</string>
     <string name="save">Save</string>
+    <string name="add_an_assignment">Add an assignment</string>
+    <string name="fill_in_the_blanks_to_add_an_assignment">Fill in the blanks to add an assignment</string>
 
 
 </resources>
