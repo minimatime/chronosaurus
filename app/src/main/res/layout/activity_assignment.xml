@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="@color/design_default_color_on_primary"
     android:paddingLeft="20dp"
-    tools:context=".MainActivity">
+    tools:context=".AssignmentActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -47,10 +47,24 @@
             android:id="@+id/AssignmentRecycler"/>
         </FrameLayout>
 
-        <TextView
+<!--        <TextView-->
+<!--            android:id="@+id/addAssignment"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="70dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:layout_weight="0.5"-->
+<!--            android:drawableLeft="@drawable/baseline_add2"-->
+<!--            android:drawablePadding="10dp"-->
+<!--            android:paddingTop="10dp"-->
+<!--            android:text="Add Assignment"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@android:color/holo_purple"-->
+<!--            android:textSize="20sp" />-->
+        <Button
             android:id="@+id/addAssignment"
             android:layout_width="wrap_content"
-            android:layout_height="70dp"
+            android:layout_height="100dp"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
             android:layout_weight="0.5"
@@ -59,8 +73,9 @@
             android:paddingTop="10dp"
             android:text="Add Assignment"
             android:textAlignment="center"
-            android:textColor="@android:color/holo_purple"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
+
     </LinearLayout>
 
 </LinearLayout>

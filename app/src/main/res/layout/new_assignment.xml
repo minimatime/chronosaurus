@@ -103,7 +103,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/addAssignment"
+                android:id="@+id/addAssignment2"
                 android:text="Add Assignment"
                 android:background="@drawable/btn_background"
                 android:textColor="@color/design_default_color_on_primary"

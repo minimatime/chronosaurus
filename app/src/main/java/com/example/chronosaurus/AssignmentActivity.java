@@ -38,12 +38,9 @@ public class AssignmentActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         // Add Assignment button click listener
-        findViewById(R.id.addAssignment).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AssignmentActivity.this, NewAssignmentActivity.class);
-                startActivity(intent);
-            }
+        findViewById(R.id.addAssignment).setOnClickListener(v -> {
+            Intent intent = new Intent(AssignmentActivity.this, NewAssignmentActivity.class);
+            startActivity(intent, savedInstanceState);
         });
 
     }
