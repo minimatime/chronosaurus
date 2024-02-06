@@ -18,13 +18,11 @@ public class NewAssignmentActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.addAssignment:
-                // Handle the add assignment button click
-                // Get data from EditText fields and save it to database or perform necessary action
-                break;
-
-            // Add more cases if there are other clickable views in your layout
+        if (v.getId() == R.id.addAssignment) {
+            // Handle the add assignment button click
+            // Get data from EditText fields and save it to database or perform necessary action
         }
+        // Add additional conditions for other clickable views if necessary
     }
+
 }
