@@ -7,9 +7,10 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     tools:context=".FirstFragment">
+<!--    <include-->
+<!--        layout="@layout/toolbarlayout"/>-->
 
     <!-- Uncomment the Button if needed -->
-    <!--
     <Button
         android:id="@+id/button_first"
         android:layout_width="wrap_content"
@@ -18,7 +19,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         />
-    -->
     <TextView
         android:id="@+id/TitleTasks"
         android:layout_width="119dp"
@@ -55,8 +55,38 @@
         android:layout_marginBottom="16dp"
         android:src="@drawable/baseline_add"
         app:backgroundTint="@color/design_default_color_secondary_variant"
-        app:fabSize="normal" />
+        app:fabSize="normal"
+        android:contentDescription="TODO" />
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomAppBar"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            app:fabCradleMargin="10dp"
+            app:fabCradleRoundedCornerRadius="50dp">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bottomNavView"
+                android:layout_marginEnd="20dp"
+                app:labelVisibilityMode="labeled"
+                android:background="@android:color/transparent"
+                app:menu="@menu/bottom_menu"/>
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
     <TextView
         android:id="@+id/tasksText"
         android:layout_width="wrap_content"

@@ -6,7 +6,7 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
+    <!-- String related to tasks-->
     <string name="task_placeholder">Task 1</string>
     <string name="tasks">Tasks</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -16,6 +16,10 @@
     <string name="save">Save</string>
     <string name="add_an_assignment">Add an assignment</string>
     <string name="fill_in_the_blanks_to_add_an_assignment">Fill in the blanks to add an assignment</string>
-
-
+    <!-- String related Schedule Fragment -->
+    <string name="semester_schedule">Semester Schedule</string>
+    <!-- Strings related to Login Page-->
+    <string name="name">Enter Name</string>
+    <string name="login_fragment_label">Login Fragment</string>
+    <string name="app_name2">Store Retrieve Realtime</string>
 </resources>
