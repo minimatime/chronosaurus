@@ -2,6 +2,8 @@ package com.example.chronosaurus;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class AssignmentActivity extends AppCompatActivity {
@@ -30,7 +34,7 @@ public class AssignmentActivity extends AppCompatActivity {
         // Populate assignments list with data
 
         // Initialize the adapter with the list of assignments
-        adapter = new AssignmentAdapter(assignments);
+        AssignmentAdapter adapter = new AssignmentAdapter(this, assignments);
         recyclerView.setAdapter(adapter);
 
         // Add Assignment button click listener
@@ -41,5 +45,47 @@ public class AssignmentActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
+    // Add sorting options (e.g., in onCreateOptionsMenu)
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.sort_menu, menu);
+        return true;
+    }
+
+    // Handle sorting option selected (e.g., in onOptionsItemSelected)
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        if (itemId == R.id.sort_by_due_date) {
+            // Sort assignments by due date
+            Collections.sort(assignments, new Comparator<Assignment>() {
+                @Override
+                public int compare(Assignment a1, Assignment a2) {
+                    // Compare due dates
+                    // Implement comparison logic based on due dates
+                    return 0; // Return the result of comparison
+                }
+            });
+            adapter.notifyDataSetChanged();
+            return true;
+        } else if (itemId == R.id.sort_by_associated_class) {
+            // Sort assignments by associated class
+            Collections.sort(assignments, new Comparator<Assignment>() {
+                @Override
+                public int compare(Assignment a1, Assignment a2) {
+                    // Compare associated classes
+                    // Implement comparison logic based on associated classes
+                    return 0; // Return the result of comparison
+                }
+            });
+            adapter.notifyDataSetChanged();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+
 }

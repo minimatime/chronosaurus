@@ -2,6 +2,7 @@ package com.example.chronosaurus;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,17 +13,19 @@ public class NewAssignmentActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_assignment);
 
-        // Add Assignment button click listener
-        findViewById(R.id.addAssignment).setOnClickListener(this);
+        // Find your views and set onClickListener
+        Button addAssignmentButton = findViewById(R.id.addAssignment);
+        addAssignmentButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
+        // Handle onClick event for the views
         if (v.getId() == R.id.addAssignment) {
-            // Handle the add assignment button click
-            // Get data from EditText fields and save it to database or perform necessary action
+            // Add Assignment button clicked
+            // Handle the button click event here
         }
-        // Add additional conditions for other clickable views if necessary
+        // Add more if-else blocks if you have more views with onClickListener
     }
 
 }
