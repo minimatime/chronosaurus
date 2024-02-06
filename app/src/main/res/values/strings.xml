@@ -2,13 +2,18 @@
     <string name="app_name">chronosaurus</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
+    <string name="first_fragment_label">Chronosaurus</string>
     <string name="second_fragment_label">Second Fragment</string>
+    <string name="lorem_ipsum">Lorem Impsum</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
     <string name="task_placeholder">Task 1</string>
     <string name="tasks">Tasks</string>
+    <string name="new_task">New Task</string>
+    <string name="course_number">Course Number</string>
+    <string name="save">Save</string>
+    <string name="due_date">Due Date (MM/DD)</string>
 
 
 </resources>
