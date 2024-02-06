@@ -45,6 +45,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation ("com.applandeo:material-calendar-view:1.7.0")
+
 
     // Room Database for local storage
     implementation("androidx.room:room-runtime:2.4.0")
