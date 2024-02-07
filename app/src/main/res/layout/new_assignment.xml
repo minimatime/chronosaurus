@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="Title"/>
+                android:text="@string/title"/>
 
             <EditText
                 android:textSize="14sp"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="30dp"
-                android:text="Due Date"/>
+                android:text="@string/due_date"/>
 
             <EditText
                 android:textSize="14sp"
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="30dp"
-                android:text="Associated class"/>
+                android:text="@string/associated_class"/>
 
             <EditText
                 android:textSize="14sp"
@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="30dp"
-                android:text="Details"/>
+                android:text="@string/details"/>
 
             <EditText
                 android:textSize="14sp"
@@ -104,7 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/addAssignment2"
-                android:text="Add Assignment"
+                android:text="@string/add_new_assignment_exam"
                 android:background="@drawable/btn_background"
                 android:textColor="@color/design_default_color_on_primary"
                 android:layout_marginTop="40dp"/>

@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="All assignments"
+                android:text="@string/all_assignments_exams"
                 android:textStyle="bold"
                 android:textColor="@android:color/holo_purple"
                 android:textSize="28sp"/>
