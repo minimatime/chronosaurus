@@ -33,7 +33,7 @@
             android:layout_marginTop="20dp"
             android:layout_toEndOf="@+id/recImage"
             android:text="Course Name"
-            android:textColor="@color/black"
+            android:textColor="@color/holo_purple"
             android:textSize="20sp"
             android:textStyle="bold" />
 

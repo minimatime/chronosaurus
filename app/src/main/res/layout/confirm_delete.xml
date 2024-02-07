@@ -22,18 +22,18 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/dltYes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:layout_marginStart="50dp"
-            android:backgroundTint="@color/black"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/holo_purple"
+            android:clickable="true"
+            android:focusable="true"
             android:text="Yes"
-            android:id="@+id/dltYes"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            android:clickable="true"
-            android:focusable="true"/>
+            android:textSize="20sp" />
 
         <Button
             android:layout_width="wrap_content"

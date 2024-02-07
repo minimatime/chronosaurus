@@ -9,25 +9,26 @@
     tools:context=".DetailActivity">
 
     <TextView
+        android:id="@+id/detailCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/detailCourse"
-        android:text="Course"
-        android:layout_marginTop="14dp"
-        android:textSize="24sp"
-        android:textStyle="bold"
         android:layout_gravity="center"
+        android:layout_marginTop="14dp"
         android:layout_marginBottom="12dp"
-        android:textColor="@color/black"/>
+        android:text="Course"
+        android:textColor="@color/holo_purple"
+        android:textSize="34sp"
+        android:textStyle="bold" />
 
     <ImageView
+        android:id="@+id/detailImage"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:id="@+id/detailImage"
-        android:padding="8dp"
         android:layout_gravity="center"
-        android:src="@drawable/class_icon"
-        android:scaleType="fitXY"/>
+        android:backgroundTint="@color/holo_purple"
+        android:padding="8dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/class_icon" />
 
     <TextView
         android:layout_width="match_parent"

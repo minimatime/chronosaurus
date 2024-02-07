@@ -6,12 +6,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ScheduleFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerView"
-        android:scrollbars="vertical"
-        android:layout_marginTop="20dp"/>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Class Schedule"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@color/holo_purple"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="click plus button to add a class"
+            android:textSize="20sp"
+            android:textColor="@color/holo_purple"/>
+    </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -30,7 +45,15 @@
         <FrameLayout
             android:id="@+id/frame_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="88dp"
+                android:scrollbars="vertical" />
+        </FrameLayout>
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:layout_width="match_parent"
