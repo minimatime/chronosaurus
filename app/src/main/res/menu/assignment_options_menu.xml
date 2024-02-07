@@ -3,8 +3,8 @@
         android:id="@+id/edit"
         android:title="Edit"/>
     <item
-        android:id="@+id/remove"
-        android:title="Remove"/>
+        android:id="@+id/delete"
+        android:title="Delete"/>
     <item
         android:id="@+id/mark_complete"
         android:title="Mark as Complete"/>

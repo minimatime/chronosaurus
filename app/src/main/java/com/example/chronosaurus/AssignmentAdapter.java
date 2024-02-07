@@ -18,11 +18,16 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.As
 
     private List<Assignment> assignments;
     private Context context; // Add this context variable
+    private OnItemClickListener listener;
 
     // Constructor to initialize assignments list
     public AssignmentAdapter(Context context, List<Assignment> assignments) {
         this.context = context;
         this.assignments = assignments;
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 
     @NonNull
@@ -51,6 +56,14 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.As
                 showPopupMenu(v, assignment);
             }
         });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onItemClick(v, position);
+                }
+            }
+        });
     }
 
     private void showPopupMenu(View view, Assignment assignment) {
@@ -62,7 +75,7 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.As
                 int itemId = item.getItemId();
                 if (itemId == R.id.edit) {
                     // Implement edit functionality
-                } else if (itemId == R.id.remove) {
+                } else if (itemId == R.id.delete) {
                     // Implement remove functionality
                 } else if (itemId == R.id.mark_complete) {
                     // Implement mark as complete functionality
@@ -74,7 +87,16 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.As
         popupMenu.show();
     }
 
-    // Other methods...
+    public void markAsComplete(int position) {
+        Assignment assignment = assignments.get(position);
+        assignment.setCompleted(true);
+        notifyItemChanged(position);
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
+
 
     public static class AssignmentViewHolder extends RecyclerView.ViewHolder {
 

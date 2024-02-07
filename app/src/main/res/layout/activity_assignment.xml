@@ -28,6 +28,13 @@
                 android:textColor="@android:color/holo_purple"
                 android:textSize="28sp"/>
 
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|center"
+                android:background="@drawable/calendar"
+                android:id="@+id/calendar" />
+
         </LinearLayout>
     </FrameLayout>
     <LinearLayout

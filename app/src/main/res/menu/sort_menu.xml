@@ -5,4 +5,7 @@
     <item
         android:id="@+id/sort_by_associated_class"
         android:title="Sort by Associated Class"/>
+    <item
+        android:id="@+id/sort_by_completion"
+        android:title="Completed"/>
 </menu>

@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,11 +16,15 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class AssignmentActivity extends AppCompatActivity {
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.PopupMenu;
+
+public class AssignmentActivity extends AppCompatActivity implements AssignmentAdapter.OnItemClickListener {
 
     private RecyclerView recyclerView;
     private AssignmentAdapter adapter;
-    private List<Assignment> assignments; // Assuming you have this list
+    private List<Assignment> assignments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,29 +34,37 @@ public class AssignmentActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.AssignmentRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Instantiate the list of assignments (populate it with data as needed)
         assignments = new ArrayList<>();
-        // Populate assignments list with data
-
-        // Initialize the adapter with the list of assignments
-        AssignmentAdapter adapter = new AssignmentAdapter(this, assignments);
+        adapter = new AssignmentAdapter(this, assignments);
+        adapter.setOnItemClickListener(this);
         recyclerView.setAdapter(adapter);
 
         // Add Assignment button click listener
         findViewById(R.id.addAssignment).setOnClickListener(v -> {
             Intent intent = new Intent(AssignmentActivity.this, NewAssignmentActivity.class);
-            startActivity(intent, savedInstanceState);
+            startActivityForResult(intent, 1); // Start activity for result
         });
-
     }
-    // Add sorting options (e.g., in onCreateOptionsMenu)
+
+    // Handle the result from NewAssignmentActivity
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
+            Assignment assignment = (Assignment) data.getSerializableExtra("assignment");
+            assignments.add(assignment);
+            adapter.notifyDataSetChanged();
+        }
+    }
+
+    // Create options menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.sort_menu, menu);
         return true;
     }
 
-    // Handle sorting option selected (e.g., in onOptionsItemSelected)
+    // Handle options menu item selection
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
@@ -60,9 +73,7 @@ public class AssignmentActivity extends AppCompatActivity {
             Collections.sort(assignments, new Comparator<Assignment>() {
                 @Override
                 public int compare(Assignment a1, Assignment a2) {
-                    // Compare due dates
-                    // Implement comparison logic based on due dates
-                    return 0; // Return the result of comparison
+                    return a1.getDueDate() - a2.getDueDate();
                 }
             });
             adapter.notifyDataSetChanged();
@@ -72,9 +83,7 @@ public class AssignmentActivity extends AppCompatActivity {
             Collections.sort(assignments, new Comparator<Assignment>() {
                 @Override
                 public int compare(Assignment a1, Assignment a2) {
-                    // Compare associated classes
-                    // Implement comparison logic based on associated classes
-                    return 0; // Return the result of comparison
+                    return a1.getAssociatedClass().compareTo(a2.getAssociatedClass());
                 }
             });
             adapter.notifyDataSetChanged();
@@ -84,5 +93,26 @@ public class AssignmentActivity extends AppCompatActivity {
         }
     }
 
-
+    // Handle item click from the adapter
+    @Override
+    public void onItemClick(View view, int position) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        popupMenu.inflate(R.menu.assignment_options_menu);
+        popupMenu.setOnMenuItemClickListener(item -> {
+            int itemId = item.getItemId();
+            if (itemId == R.id.edit) {
+                // Implement edit functionality
+                // You can navigate to NewAssignmentActivity with data of selected assignment
+            } else if (itemId == R.id.delete) {
+                // Implement delete functionality
+                assignments.remove(position);
+                adapter.notifyItemRemoved(position);
+            } else if (itemId == R.id.mark_complete) {
+                // Implement mark as complete functionality
+                adapter.markAsComplete(position);
+            }
+            return true;
+        });
+        popupMenu.show();
+    }
 }
