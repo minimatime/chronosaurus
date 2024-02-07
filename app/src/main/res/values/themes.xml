@@ -3,8 +3,10 @@
     <style name="Base.Theme.Chronosaurus" parent="Theme.Design.Light.BottomSheetDialog">
 
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/white</item>
     </style>
 
-    <style name="Theme.Chronosaurus" parent="Base.Theme.Chronosaurus" />
+    <style name="Theme.Chronosaurus" parent="Base.Theme.Chronosaurus">
+        <item name="colorPrimary">@color/white</item>
+    </style>
 </resources>
